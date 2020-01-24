@@ -8,6 +8,8 @@ from git_call import git_remote_add_FakeClass
 
 STUDENTS = [
 'victor-estrade',
+# 'Didayolo', # Adrien
+# 'herilalaina', # Heri
 ]
 
 def main():

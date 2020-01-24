@@ -42,9 +42,9 @@ def main():
     # FIXME ugly hack to access student code if they forgot to use relative import
     sys.path.append('./{}'.format(TP))
 
-    all_results = run('local', TP)
-    all_scores = [e[0] for e in all_results]
-    all_status = [e[1] for e in all_results]
+    scores, status = run('local', TP)
+    all_scores = [scores]
+    all_status = [status]
     score_table = pd.DataFrame(all_scores)
     status_table = pd.DataFrame(all_status)
     score_path = os.path.join(GRADE_DIR, '{}-scores.csv'.format(TP))

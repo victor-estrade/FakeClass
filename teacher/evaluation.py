@@ -33,13 +33,13 @@ def evaluate_all(all_questions, all_answers):
 
 
 NOTFOUND = "NOTFOUND"
-PARTIAL  = "PARTIAL "
-SUCCESS  = "SUCCESS "
-ERROR    = "ERROR   "
-FAIL     = "FAIL    "
+PARTIAL  = "PARTIAL"
+SUCCESS  = "SUCCESS"
+ERROR    = "ERROR"
+FAIL     = "FAIL"
 
 def _print_eval_result(question, exception=""):
-    print("{} [{}] ({}/{}) {}".format(question.status
+    print("{:9} [{}] ({}/{}) {}".format(question.status
         , question.__name__
         , question.score
         , question.max_score

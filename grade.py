@@ -16,7 +16,7 @@ from teacher import grade
 from students import STUDENTS
 
 from git_call import git_branch_tmp
-from git_call import git_checkout_master
+from git_call import git_checkout_teacher
 from git_call import git_checkout_tmp
 from git_call import git_reset_remote_master
 from git_call import git_fetch_remote
@@ -67,7 +67,7 @@ def main():
     except AssertionError:
         pass
     finally:
-        git_checkout_master()
+        git_checkout_teacher()
         git_delete_branch_tmp()
 
 

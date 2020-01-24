@@ -13,6 +13,10 @@ def git_checkout_master():
     ret_code = call(['git', 'checkout', 'master'])
     assert ret_code == 0, 'git checkout master FAILED (code={}) !'.format(ret_code)
 
+def git_checkout_teacher():
+    ret_code = call(['git', 'checkout', 'teacher'])
+    assert ret_code == 0, 'git checkout master FAILED (code={}) !'.format(ret_code)
+
 def git_fetch_remote(remote_name):
     ret_code = call(['git', 'fetch', remote_name])
     assert ret_code == 0, 'git fetch {} (code={}) !'.format(remote_name, ret_code)

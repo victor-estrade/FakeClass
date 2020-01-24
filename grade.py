@@ -23,7 +23,7 @@ from git_call import git_fetch_remote
 from git_call import git_delete_branch_tmp
 
 
-def parse_args(main_description="Training launcher"):
+def parse_args(main_description="Grading script to grade all registered students"):
     parser = argparse.ArgumentParser(description=main_description)
     parser.add_argument('TP', help='Which TP (directory) to grade', type=str)
     args = parser.parse_args()

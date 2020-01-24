@@ -1,5 +1,5 @@
-from teacher import Combine
 from teacher import Score
+from teacher import SubQuestion
 
 def question_00(answer):
     """
@@ -9,6 +9,7 @@ def question_00(answer):
     CORRECT = 0
     assert answer() == CORRECT
 
+
 @Score(1)
 def question_01(answer):
     """
@@ -17,19 +18,19 @@ def question_01(answer):
     """
     pass
 
-def sub_question_02_a(answer):
+
+@SubQuestion('question_02')
+def question_02_a(answer):
     pass
 
-def sub_question_02_b(answer):
+@SubQuestion('question_02')
+def question_02_b(answer):
     pass
 
 @Score(1.5)
-def sub_question_02_c(answer):
+@SubQuestion('question_02')
+def question_02_c(answer):
     assert 1 == 0, '1 != 0'
-
-@Combine(sub_question_02_a, sub_question_02_b, sub_question_02_c, )
-def question_02(answer):
-    pass
 
 
 @Score(1)
@@ -40,3 +41,7 @@ def question_0e(answer):
     """
     raise ValueError('A free value error')
 
+
+@SubQuestion("question_55")
+def question_04(answer):
+    pass

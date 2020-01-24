@@ -5,7 +5,7 @@ from __future__ import absolute_import
 from __future__ import unicode_literals
 
 from teacher import Score
-from teacher import Combine
+from teacher import SubQuestion
 
 def question_01(answer):
 	"""

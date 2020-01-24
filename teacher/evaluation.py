@@ -23,7 +23,7 @@ def evaluate_all(all_questions, all_answers):
     results = dict(max_score=max_score)
     all_status = dict()
     for question_name, question in all_questions.items():
-        answer = find_answer(question_name, all_answers)
+        answer = find_answer(question, all_answers)
         question = evaluate(question, answer)
         results[question_name] = question.score
         all_status[question_name] = question.status

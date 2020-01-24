@@ -7,5 +7,5 @@ from __future__ import unicode_literals
 
 from .evaluation import grade
 from .question_helper import Score
-from .question_helper import Combine
+from .question_helper import SubQuestion
 

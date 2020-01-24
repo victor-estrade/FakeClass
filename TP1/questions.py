@@ -5,7 +5,7 @@ from __future__ import absolute_import
 from __future__ import unicode_literals
 
 from teacher import Score
-from teacher import Combine
+from teacher import SubQuestion
 
 def question_01(answer):
 	"""
@@ -16,7 +16,8 @@ def question_01(answer):
 
 
 @Score(1/4)
-def sub_02_a(answer):
+@SubQuestion('question_02')
+def question_02_a(answer):
 	"""
 	number of features ?
 	"""
@@ -24,7 +25,8 @@ def sub_02_a(answer):
 	assert answer().get('nb_features', None) == CORRECT
 
 @Score(1/4)
-def sub_02_b(answer):
+@SubQuestion('question_02')
+def question_02_b(answer):
 	"""
 	number of training samples ?
 	"""
@@ -32,7 +34,8 @@ def sub_02_b(answer):
 	assert answer().get('nb_training_samples', None) == CORRECT
 
 @Score(1/4)
-def sub_02_c(answer):
+@SubQuestion('question_02')
+def question_02_c(answer):
 	"""
 	number of validation samples ?
 	"""
@@ -40,7 +43,8 @@ def sub_02_c(answer):
 	assert answer().get('nb_validation_samples', None) == CORRECT
 
 @Score(1/4)
-def sub_02_d(answer):
+@SubQuestion('question_02')
+def question_02_d(answer):
 	"""
 	number of test samples ?
 	"""
@@ -48,15 +52,10 @@ def sub_02_d(answer):
 	assert answer().get('nb_test_samples', None) == CORRECT
 
 
-@Combine(sub_02_a, sub_02_b, sub_02_c, sub_02_d)
-def question_02(answer):
-	"""
-	Open data files and answer simple questions
-	"""
-	pass
 
 @Score(1/4)
-def sub_03_a(answer):
+@SubQuestion('question_03')
+def question_03_a(answer):
 	"""
 	Open and read given code and answer simple question
 	"""
@@ -64,7 +63,8 @@ def sub_03_a(answer):
 	assert answer().get("import_numpy_as", None) == CORRECT
 
 @Score(1/4)
-def sub_03_b(answer):
+@SubQuestion('question_03')
+def question_03_b(answer):
 	"""
 	Open and read given code and answer simple question
 	"""
@@ -72,7 +72,8 @@ def sub_03_b(answer):
 	assert answer().get("import_pandas_as", None) == CORRECT, "hint : PanDas"
 
 @Score(1/4)
-def sub_03_c(answer):
+@SubQuestion('question_03')
+def question_03_c(answer):
 	"""
 	Open and read given code and answer simple question
 	"""
@@ -80,18 +81,10 @@ def sub_03_c(answer):
 	assert answer().get("name_of_first_argument_of_read_as_df", None) == CORRECT
 
 @Score(1/4)
-def sub_03_d(answer):
+@SubQuestion('question_03')
+def question_03_d(answer):
 	"""
 	Open and read given code and answer simple question
 	"""
 	CORRECT = "train"
 	assert answer().get("default_value_of_second_argument_of_read_as_df", None) == CORRECT
-
-@Combine(sub_03_a, sub_03_b, sub_03_c, sub_03_d)
-def question_03(answer):
-	"""
-	Open and read given code and answer simple question
-	"""	
-	pass
-
-

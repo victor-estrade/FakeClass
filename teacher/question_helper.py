@@ -15,15 +15,9 @@ def Score(sc):
     return score_decorator
 
 
-def Combine(*args):
-    total_score = sum([ensure_score(sub_q).score for sub_q in args])
-    def combine_decorator(question):
-        def new_question(answer):
-            new_question.score = sum([evaluate(sub_q, answer).score for sub_q in args])
-            return None
-        new_question.__name__ = question.__name__
-        new_question.score = total_score
-        new_question.max_score = total_score
-        return new_question
-    return combine_decorator
+def SubQuestion(name):
+    def question_decorator(question):
+        question.__question_name__ = name
+        return question
+    return question_decorator
 

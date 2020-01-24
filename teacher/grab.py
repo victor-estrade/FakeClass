@@ -13,7 +13,10 @@ def is_answer(name, obj):
     return name.startswith(ANSWER_PREFIX)
 
 def is_question(name, obj):
-    return name.startswith(QUESTION_PREFIX)
+    try:
+        return obj.__question_name__.startswith(QUESTION_PREFIX)
+    except AttributeError:
+        return name.startswith(QUESTION_PREFIX)
 
 
 def extract_answers(module):
@@ -32,6 +35,15 @@ def answer_name(question_name):
     name = ANSWER_PREFIX + suffix
     return name
 
-def find_answer(question_name, all_answers):
+def find_answer(question, all_answers):
+    question_name = question.__name__
     answer = all_answers.get(answer_name(question_name), None)
-    return answer
+    if answer is not None :
+        return answer
+    else:
+        try :
+            question_name = question.__question_name__
+            answer = all_answers.get(answer_name(question_name), None)
+        except AttributeError:
+            pass
+        return answer

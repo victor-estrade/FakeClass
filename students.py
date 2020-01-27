@@ -8,9 +8,9 @@ from git_call import git_remote_add_FakeClass
 
 STUDENTS = {
 'victor-estrade': 'Estrade Victor',
-'Didayolo':  'Pavao Adrien',
+# 'Didayolo':  'Pavao Adrien',
 'herilalaina': 'Rakotoarison Herilalaina',
-'fake_student':  'No Git Found test',
+# 'fake_student':  'No Git Found test',
 }
 
 

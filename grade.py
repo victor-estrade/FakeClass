@@ -55,7 +55,7 @@ def main():
     git_branch_tmp()
     git_checkout_tmp()
     try :
-        all_results = [run(remote_name, TP) for remote_name in STUDENTS]
+        all_results = [run(remote_name, TP) for remote_name, student_name in STUDENTS.items()]
         all_scores = [e[0] for e in all_results]
         all_status = [e[1] for e in all_results]
         score_table = pd.DataFrame(all_scores)

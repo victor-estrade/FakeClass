@@ -21,6 +21,10 @@ def git_fetch_remote(remote_name):
     ret_code = call(['git', 'fetch', remote_name])
     assert ret_code == 0, 'git fetch {} (code={}) !'.format(remote_name, ret_code)
 
+def git_fetch_remote_master(remote_name):
+    ret_code = call(['git', 'fetch', remote_name, 'master'])
+    assert ret_code == 0, 'git fetch {} (code={}) !'.format(remote_name, ret_code)
+
 def git_reset_remote_master(remote_name):
     ret_code = call(['git', 'reset', '--hard', '{}/master'.format(remote_name)])
     assert ret_code == 0, 'git reset --hard {}/master FAILED (code={}) !'.format(remote_name, ret_code)
